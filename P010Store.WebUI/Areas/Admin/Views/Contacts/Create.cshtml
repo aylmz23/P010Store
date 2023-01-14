@@ -1,0 +1,61 @@
+﻿@model P010Store.Entities.Contact
+
+@{
+    ViewData["Title"] = "Yeni Oluştur";
+}
+
+<h3>Yeni Ekle</h3>
+
+<h4>İletişim</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group my-2">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" id="Phones" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <input type="submit" value="Create" class="btn btn-primary col-12" />
+            </div>
+        </form>
+        <div class="my-2">
+            <a class="btn btn-outline-secondary col-12" asp-action="Index">Listeye Dön</a>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+<script>
+   $(window).load(function()
+{
+   var phones = [{ "mask": "(###) ###-####"}, { "mask": "(###) ###-##############"}];
+    $('#Phones').inputmask({ 
+        mask: phones, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+});
+</script>
+

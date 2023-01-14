@@ -1,0 +1,49 @@
+﻿@model P010Store.Entities.Brand
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Marka sil</h3>
+
+<h4>Silmek istediğinizden Emin misiniz?</h4>
+<div>
+    <h5>Brand</h5>
+    <hr />
+    <div class="col-md-4">
+        <dl class="row">
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Logo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Logo)
+                <img src="/Img/@Model.Logo" height="120" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IsActive)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IsActive)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Sil" class="btn btn-danger col-12" /> <br /> <hr />
+            <a class="btn btn-outline-secondary col-12" asp-action="Index">Listeye Dön</a>
+        </form>
+    </div>
+</div>

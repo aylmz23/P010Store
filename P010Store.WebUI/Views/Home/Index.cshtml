@@ -1,0 +1,23 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<partial name="_Carousel" model="Model.Carousels"/>
+@section Scripts{
+    <script>
+        $(".carousel-item:first").addClass("active")
+        $(".carousel-indicators button:first").addClass("active")
+    </script>
+}
+<!-- Header-->
+<header class="bg-dark py-5 container-fluid">
+    <div class="container my-2 py-2">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+        </div>
+    </div>
+</header>
+
+<partial name="_Products" model="Model.Products" />

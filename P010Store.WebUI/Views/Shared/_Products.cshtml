@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Product>
+
+<section class="py-5">
+    <div class="container mt-5">
+        <div class="row gx-2 gx-lg-3 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <img class="card-img-top p-3" src="/Img/Products/@item.Image" alt="" title="@item.Name" />
+                            <div class="card-body">
+                            </div>
+                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <h5 class="">@item.Name</h5>
+                                    <p>@item.Price</p>
+                                </div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto col-12" href="/Produ    /@item.Id">İncele</a></div>
+                            </div>
+                        </div>
+                    </div>
+            }
+        </div>
+    </div>
+</section>
